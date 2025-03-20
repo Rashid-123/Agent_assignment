@@ -5,6 +5,7 @@
 - User authentication (Signup/Login)
 - User can create agent 
 - File uploads ( for tasks )
+- tasks are assigned to different agents
 - Secure API with JWT authentication
 - Uses MongoDB for data storage
 
