@@ -3,7 +3,7 @@ import Agent from "../models/agent.js";
 import Task from "../models/task.js";
 
 /// ------------------------- Add agents -----------------
- export const addAgent = async (req, res) => {
+export const addAgent = async (req, res) => {
     try {
         const { name, email, mobileNumber, password } = req.body;
         const userId = req.user._id;
@@ -150,10 +150,10 @@ export const getSingleAgent = async (req, res) => {
     try {
         const agentId = req.params.id;
         const userId = req.user._id;
-
+        console.log("Fetching agent with ID:", agentId, "for user:", userId);
         const agent = await Agent.findById(agentId)
             .lean()
-            .select('name email mobileNumber');
+            .select('name email mobileNumber createdAt');
 
         if (!agent) {
             return res.status(404).json({
