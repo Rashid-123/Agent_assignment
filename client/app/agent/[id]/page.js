@@ -24,7 +24,7 @@ export default function AgentDetailsPage({ params }) {
     const router = useRouter();
 
     const agentId = params.id;
-
+   // get token for autherization  
     const getToken = () => {
         return localStorage.getItem('token');
     };
